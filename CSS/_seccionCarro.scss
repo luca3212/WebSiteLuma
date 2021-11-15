@@ -1,0 +1,270 @@
+#Carro{
+    .conteCentro{
+        padding: 8px;
+    }
+}
+
+
+.contenidoCarro{
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .cuerpoCarro{
+        width: 50%;
+        .conteItem{
+            margin-top: 10px;
+        }
+    }
+    .totales{
+        width: 40%;
+        height: max-content;
+    }
+}
+
+.itemLista{
+    display: flex;
+    flex-direction: row;
+    //border: 1px solid black;
+    width: 100%;
+    align-items: stretch;
+    align-content: stretch;
+    border: 1px solid rgba(3, 3, 3,0.1);
+    background-color: rgba(255,255,255,1);
+    height: max-content;
+
+    .itemFoto{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        div{
+            width: 160px;
+            display: flex;
+            img{
+                max-width: 100%;
+                // border: 4px solid #fff;
+            }
+        }
+    }
+    .divTodoInfo{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
+
+.divClose{
+    .BtnEliminar{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        button{
+            
+            font-size: 24px;
+            border: none;
+            padding: 8px;
+            cursor: pointer;
+            background: transparent;
+
+            span{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+}
+
+.itemdatos{
+    div{
+        padding: 8px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-around;
+        
+        h3{
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
+        p{
+            font-style: italic;
+            font-size: 1rem;
+        }
+        h2{
+            font-size: 1.1rem;
+            font-weight: 400;
+        }
+    }
+}
+
+.divContador{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 8px;
+    .btnsContador{
+        width: 50%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        input{
+            text-align: center;
+            width: 30px;
+            border: none;
+            background: #f7f7f7;
+            font-size: 1.5rem;
+        }
+        button{
+            background: #f1b5b5;
+            color: #fff;
+            font-size: 1.5rem;
+            border: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            &:hover{
+                box-shadow: 0px 10px 10px rgba(0, 0, 0,  0.10);
+            }
+            
+        }
+    }
+    .total{
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+
+.totales{
+    position: sticky;
+    top: 10px;
+    display: flex;
+    flex-direction: column;
+    
+    border: 1px solid rgba(3, 3, 3,0.1);
+    margin-top: 10px;
+    background-color: rgba(255,255,255,1);
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    
+    .contenedorTotales{
+        width: 100%;
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        div{
+        
+            margin-right: 16px;
+            h2{
+                font-size: 2rem;
+            }
+    
+        }
+        #montoTotal{
+            font-weight: bold;
+            font-size: 2rem;
+            
+        }
+    }
+
+    .btnCarro{
+        width: 100%;
+        padding:8px 0 0 0;
+        display: flex;
+        justify-content: center;
+
+        button{
+            
+            width: 215px;
+            font-size: 20px;
+            
+            border: none;
+            
+            padding: 8px;
+            cursor: pointer;
+           
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            span{
+                font-size: 24px;
+                text-align: left;
+                display: flex;
+                align-items: center;
+            }
+            
+            &:hover{
+                background:#000;
+                color: #fff;
+                box-shadow: 0px 10px 10px rgba(0, 0, 0,  0.10);
+            }
+        }
+    }
+    
+
+}
+
+@media screen and (max-width:830px ) {
+    .contenidoCarro{
+       
+        flex-direction: column;
+        
+        .cuerpoCarro{
+            width: 100%;
+            
+        }
+        .totales{
+            width: 100%;
+            
+        }
+    }
+
+}
+
+@media screen and (max-width: 420px){
+    .divContador{
+        
+        flex-direction: column;
+       
+        //padding: 8px;
+        .btnsContador{
+            width: 100%;
+        }
+        .total{
+            width: 100%;
+        }
+    }
+
+    .divClose{
+        .BtnEliminar{
+            button{
+                padding: 2px;
+            }
+        }
+    }
+
+    .itemdatos{
+        div{
+            h3,p,h2{
+                font-size: 1rem;
+            }
+        }
+    }
+
+    .divContador{
+        padding: 2px;
+        .btnsContador{
+            margin-bottom: 4px;
+        }
+    }
+
+}

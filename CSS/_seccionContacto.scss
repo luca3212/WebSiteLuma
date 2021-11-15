@@ -1,0 +1,140 @@
+
+#Contacto{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: flex-end;
+   
+    .conteCentro{
+        width: 70%;
+        height: 83vh;
+    }
+}
+
+.conteContacto{
+    height: 100%;
+    padding: 0 40px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.tituloContacto{
+    h2{
+        text-align: center;
+        text-transform: uppercase;
+        color: #000;
+        letter-spacing: 2px;
+    }
+    h5{
+        text-align: center;
+        font-style: italic;
+        text-transform: uppercase;
+        font-size: 1.1rem;
+        font-weight: normal;
+        color:#5c5c5c;
+    }
+}
+
+.listaContacto{
+    
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    form{
+        width: 100%;
+       
+        
+        ul{
+            
+            width: 100%;
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            li{
+                
+                width: 50%;
+                padding: 8px 0 0 0;
+                input,textarea{
+                    width: 100%;
+                    padding: 8px;
+                    margin: 0 0 8px 0;
+                    border:none;
+                    background: rgba(241, 181, 181 , 0.40);
+                }
+                
+                
+            }
+            .btonContacto{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                button{
+                    border:none;
+                    background: #000000;
+                    width: 50%;
+                    padding: 8px;
+                    border-radius: 4px;
+                    color: #f1b5b5;
+                    margin: 4px 0 0 0;
+                    cursor: pointer;
+                    
+                    &:hover{
+                        transform: scale(1.1);
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 850px ){
+    .listaContacto{
+        form{
+            ul{
+                li{
+                    width:90%;
+                }
+            }
+        }
+    } 
+
+}
+
+@media screen and(max-width: 600px) {
+    #Contacto{
+        
+        .conteCentro{
+            width: 100%;
+        }
+    }
+
+    
+    .listaContacto{
+        form{
+            ul{
+                li{
+                    input,textarea{
+                        background: rgba(161, 161, 161 , 0.40);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-height: 580px){
+    #Contacto{
+            
+        .conteCentro{
+           
+            height: max-content;
+        }
+    }
+}

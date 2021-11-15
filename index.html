@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luma Maquillaje | Website</title>
+
+    <!--Estilos-->
+    <link rel="stylesheet" href="CSS/stylePrincipal.css">
+
+    <!--Iconos-->
+    <link rel="stylesheet" href="https://cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css">
+
+    <script type="text/javascript" src="JS/jquery-3.1.1.js"></script>
+
+
+    <!--Mapa-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>    
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+    
+</head>
+<body>
+
+    <header>
+        <div class="conteCentro">
+            <div class="titulo">
+                <h1>Luma Maquillaje</h1>
+            </div>
+            <div class="menu" id="menuPrincipal">
+                <ul class="tabs">
+                    <li class="icono-cierre" id="cerrarMenu"><span id="close" class="mdi mdi-chevron-right"></span></li>
+
+                    <li><a href="#Productos" class="">Productos</a></li>
+                                                    
+                    <li><a href="#Envios" class="">Envios</a></li>
+                    
+                    <li><a href="#Pagos">Formas de Pago</a></li>
+                     
+                    <li><a href="#Contacto" >Contacto</a></li>
+                </ul>
+            </div>
+            <div class="menu-burger" id="divBurger">
+                <span id="icoMenu" class="mdi mdi-menu icono-menu"></span>
+            </div>
+        </div>
+    </header>
+
+    <div class="secciones">
+        <article id="Productos">
+            <div class="conteCentro">
+                <div class="conteProductos">
+                    <div id="tituloProducto">
+                        <div class="leftProducto">
+                            <h2 class="tituloSeccion">Productos</h2>
+                        </div>
+                        <div class="rightProducto">
+                            <div class="rconte">
+                                <input type="search" name="filtro" id="filtro" placeholder="Buscar..">
+                                <span id="buscarbton" class="mdi mdi-magnify"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="divProductos" class="listaProductos">
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="btonesFloat">
+                <div id="icoUp" class="iconoUp">
+                    <span class="mdi mdi-chevron-up"></span>
+                </div>
+
+                <div id="icoCarro">
+                    <span class="mdi mdi-shopping-outline"></span>
+                    <div id="nroCarro">
+                        <h3 id="mostrarnro" value="0">0</h3>
+                    </div>
+                </div>
+            </div>
+      
+            
+        </article>
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="img01">
+            <div id="caption"></div>
+        </div>
+    
+        <article id="Envios">
+            <div class="conteCentro">
+                <div class="conteEnvios">
+                    <div class="tituloEnvios">
+                        <h2 class="tituloSeccion">Envios</h2>
+                    </div>
+                    <div class="listaEnvios">
+                        <p>Envíos sin cargo a zona centro o zona estación.<br> Resto de la ciudad se cobrara un costo adicional.</p>
+                    </div>
+                    <span class="separador"></span>
+                    <div class="conteMap">
+                        <div id='map'></div>
+	                    <script src="JS/map.js"></script>
+                    </div>
+                </div>
+            </div>
+        </article>
+    
+        <article id="Pagos">
+            <div class="conteCentro">
+                <div class="contePagos">
+                    <div class="tituloPagos">
+                        <h2 class="tituloSeccion">Formas de Pago</h2>
+                    </div>
+                    <div class="listaPagos">
+                        <div><h4>Efectivo</h4></div>
+                        <span></span>
+                        <div><h4>Tarjeta de crédito y débito a través de MercadoPago</h4></div>
+                        <span></span>
+                        <div><h4>Transferencia o  depósito por la app de MercadoPago o Ualá</h4></div>
+                    </div>
+                </div>
+            </div>
+        </article>
+    
+        <article id="Contacto">
+            <div class="conteCentro">
+                <div class="conteContacto">
+                    <div class="tituloContacto">
+                        <h2 class="tituloSeccion">Contacto</h2>
+                        <h5>Envianos un mensaje!</h5>
+                    </div>
+                    <div class="listaContacto">
+                        <form>
+                            <ul>
+                                <li><label for="nameContact">Nombre</label></li>
+                                <li><input type="text" name="nameContact" id="nameContact"></li>
+                                <li><label for="apellidoContact">Apellido</label></li>
+                                <li><input type="text" name="apellidoContact" id="apellidoContact"></li>
+                                <li><label for="telefonoContact">Telefono</label></li>
+                                <li><input type="tel" name="telefonoContact" id="telefonoContact"></li>
+                                <li><label for="mensajeContact">Mensaje</label></li>
+                                <li><textarea name="mensajeContact" id="mensajeContact" cols="30" rows="5"></textarea></li>
+                                <li class="btonContacto"><button  type="button" id="sendMensaje">Enviar!</button></li>
+                            </ul>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <article id="Carro">
+            <div class="conteCentro">
+                <div class="tituloCarro">
+                    <h2 class="tituloSeccion">Carrito</h2>
+                </div>
+                <div class="contenidoCarro">
+                    <div class="cuerpoCarro" id="ListaCarro">
+                        <div class="conteItem" idItemProducto="">
+                            <div class="itemLista">
+                                <div class="itemFoto">
+                                    <div>
+                                        <p>foto</p>
+                                        <!--<img src="" alt="">-->
+                                    </div>
+                                </div>
+                                <div class="divTodoInfo">
+                                    <div class="divClose">
+                                        <div class="BtnEliminar">
+                                            <button  onclick="eliminarItem()"><span class="mdi mdi-trash-can-outline"></span></button>
+                                        </div>
+                                    </div>
+                                    <div class="itemdatos">
+                                        <div>
+                                            <h3>titulo</h3>
+                                            <p>descripcion</p>
+                                            <h2>Precio unitario: </h2>
+                                        </div>
+                                    </div>
+                                    <div class="divContador">
+                                        <div class="btnsContador">
+                                            <button class="mdi mdi-minus"></button>
+                                            <input type="text" name="contadorC" readonly>
+                                            <button class="mdi mdi-plus"></button>
+                                        </div>
+                                    </div>
+                                    <div class="divSubtotal">
+                                        <div class="total">
+                                            <h2>subtotal</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="totales">
+                        <div class="contenedorTotales">
+                            <div>
+                                <h2>Total:</h2>
+                            </div>
+                            <div id="montoTotal">
+        
+                            </div>
+                        </div>
+    
+                        <div class="btnCarro">
+                            <button id="ConfirmarCompra"> <span class="mdi mdi-check-bold"></span> Confirmar Compra</button>
+                            <!--<button>VACIAR CARRITO</button>-->
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </article>
+    </div>
+
+    <div id="pantallaConfir" class="modal">
+        <div class="modal-content form-compra">
+            <div class="centrarForm">
+                <div class="contetitulo">
+                    <h3>Último paso!</h3>
+                    <h2>Formulario de Registro</h2>
+                </div>
+                <div class="conteForm">
+                    <form>
+                        <ul>
+                            <li>
+                                <label for="apellido">Apellido<p>*</p></label>
+                                <input type="text" name="apellido" id="apellido">
+                            </li>
+                            <li>
+                                <label for="nombre">Nombre<p>*</p></label>
+                                <input type="text" name="nombre" id="nombre">
+                            </li>
+                            <li>
+                                <label for="telefono">Teléfono<p>*</p></label>
+                                <input type="number"  name="telefono" id="telefono">
+                            </li>
+                            <li>
+                                <label for="mail">Email<p>*</p></label>
+                                <input type="text" name="mail" id="mail">
+                            </li>
+                            <li>
+                                <label for="domicilio">Domicilio<p>*</p></label>
+                                <input type="text" name="domicilio" id="domicilio">
+                            </li>
+                            <li>
+                                <p>(*) Campos Obligatorios</p>
+                            </li>
+                        </ul>
+                        <div>
+                            <button type="button" id="cerrarForm">Cancelar</button>
+                            <button type="button" id="enviarForm">Enviar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+
+    <footer>
+        
+    </footer>
+    <script type="text/javascript" src="JS/items.js"></script>
+    <script type="text/javascript" src="JS/main.js"></script>
+    <script type="text/javascript" src="JS/formContacto.js"></script>
+
+    <script>
+        //boton subir 
+        const btonUp = document.getElementById('icoUp');
+
+        btonUp.addEventListener('click', ()=>{
+            window.scroll({
+                top: 0,
+                left: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        function scrollUp(){
+            // When the scroll is higher than 560 viewport height, add the show-scroll class to the a tag with the scroll-top class
+            if(this.scrollY >= 560){
+                btonUp.classList.add('show-scroll');
+            } else{
+                btonUp.classList.remove('show-scroll');
+            }
+        }
+
+        window.addEventListener('scroll', scrollUp);
+
+        // Get the modal
+        var modal = document.getElementById("myModal");
+        
+        // Get the image and insert it inside the modal - use its "alt" text as a caption
+        //var img = document.getElementById("myImg");
+        var modalImg = document.getElementById("img01");
+        var captionText = document.getElementById("caption");
+
+        function agrandar(id){
+          modal.style.display = "block";
+          modalImg.src = "IMG-COMPR/img"+id+".jpg";
+          //captionText.innerHTML = ;
+        }
+       
+        
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+        
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() { 
+          modal.style.display = "none";
+        }
+
+
+        //modal registro compra
+        const btonCompra =  document.getElementById("ConfirmarCompra");
+        const btonCerrar = document.getElementById("cerrarForm");
+        var modalCompra = document.getElementById("pantallaConfir");
+
+        btonCompra.addEventListener('click',()=>{
+            if(carroLocal.length!=0){
+                modalCompra.style.display = "block";
+            }else{
+                alert("El carro esta vacio..");
+                $('#Productos').show(); 
+            }
+        });
+
+        btonCerrar.addEventListener('click', ()=>{
+            modalCompra.style.display = "none";
+            limpiarForm();
+            //mostrarCarro();
+            $('.secciones article').hide();
+            $('#Carro').show();
+        });
+
+        //campos input del form
+        const apellidoForm  = document.getElementById("apellido");
+        const nombreForm    = document.getElementById("nombre");
+        const telefonoForm  = document.getElementById("telefono");
+        const mailForm      = document.getElementById("mail");
+        const domicilioForm = document.getElementById("domicilio");
+
+        function limpiarForm(){
+            apellidoForm.value  = ""; 
+            nombreForm.value    = "";   
+            telefonoForm.value  = ""; 
+            mailForm.value      = "";     
+            domicilioForm.value = "";
+        }
+
+        const botonEnviarForm = document.getElementById("enviarForm");
+
+        botonEnviarForm.addEventListener('click',()=>{
+            validarForm();
+        });
+
+        function validarForm(){
+            var contador=0;
+            if(apellidoForm.value.length == 0){
+                apellidoForm.focus();
+                contador++;
+            }
+            if(nombreForm.value.length == 0){
+                nombreForm.focus();
+                contador++;
+            }
+            if(telefonoForm.value.length == 0){
+                telefonoForm.focus();
+                contador++;
+            }
+            if(mailForm.value.length == 0){
+                mailForm.focus();
+                contador++;
+            }
+            if(domicilioForm.value.length == 0){
+                domicilioForm.focus();
+                contador++;
+            }
+
+            if(contador==0){
+               //formulario valido
+                guardarPedido();
+            }
+        }
+
+      
+
+        function guardarPedido(){
+            
+            var detalleCompra = JSON.stringify(carroLocal);
+            console.log(detalleCompra);
+            $.ajax({
+                type: "POST",
+                url: "PHP/guardarOrden.php",
+                data: {APELLIDO: apellidoForm.value ,NOMBRE: nombreForm.value,TELEFONO: telefonoForm.value,MAIL: mailForm.value,DOMICILIO: domicilioForm.value, ITEMSCANT: cantidadcont,TOTAL: sumaFinal,arrayDeValores:detalleCompra},
+                success: function (response){
+                    if(response == 1){
+                        alert("El pedido fue registrado con éxito, en breve nos pondremos en contacto.");
+                        //borrar storage
+                        sessionStorage.removeItem('ProductosGuardados');
+                        //borra carrolocal
+                        carroLocal = [];
+                        //volver a index
+                        location.reload();
+                    }else{
+                        alert("Error al registrar el pedido, intente nuevamente o comuníquese a través de la sección Contacto");
+                        //console.log(response);
+                        modalCompra.style.display = "none";
+                        limpiarForm();
+                        $('.secciones article').hide();
+                        ('#Carro').show();
+                    }
+                }
+            });
+
+        }
+        
+
+        
+    </script>
+</body>
+</html>
